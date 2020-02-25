@@ -5,6 +5,8 @@ using SimplexNoise;
 
 public class TerrainGeneration : MonoBehaviour
 {
+    public GameObject grass;
+    public GameObject dirt;
     private int yScale = 2;
     private int xScale = 5;
     private ArrayList genned = new ArrayList();
@@ -37,10 +39,10 @@ public class TerrainGeneration : MonoBehaviour
                 float fd = pm+pm*noise(i, 10);
                 int height = Mathf.FloorToInt((fd+om+l2+mm)*yScale);
                 float tmult = (100+100*noise(i, 300))/8;
-                GameObject topblock = Instantiate(GameObject.Find("TerrainObject"),new Vector3(i, height+1,0),Quaternion.identity);
+                GameObject topblock = Instantiate(grass,new Vector3(i, height+1,0),Quaternion.identity);
                 topblock.transform.parent = tparent;
                 for(int i2 = height; i2 >= 0; i2-=1) {
-                    GameObject bblock = Instantiate(GameObject.Find("TerrainObject"),new Vector3(i, i2,0),Quaternion.identity);
+                    GameObject bblock = Instantiate(dirt,new Vector3(i, i2,0),Quaternion.identity);
                     bblock.transform.parent = tparent;
                 }
             }
