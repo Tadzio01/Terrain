@@ -11,8 +11,8 @@ public class PlayerControl : MonoBehaviour
     bool Isgrounded() {
         float sy = transform.localScale.y/2;
         bool r1 = Physics.Raycast(transform.position, -Vector3.up, sy);
-        bool r2 = Physics.Raycast(transform.position+new Vector3(0.5f,0,0),-Vector3.up,sy);
-        bool r3 = Physics.Raycast(transform.position-new Vector3(0.5f,0,0),-Vector3.up,sy);
+        bool r2 = Physics.Raycast(transform.position+new Vector3(0.45f,0,0),-Vector3.up,sy);
+        bool r3 = Physics.Raycast(transform.position-new Vector3(0.45f,0,0),-Vector3.up,sy);
         return (r1 || r2 || r3);
     }
     void Start()
