@@ -7,6 +7,7 @@ public class PlayerControl : MonoBehaviour
     private float speed = 5;
     private Rigidbody rb;
     private float jumpcool;
+    private Camera cam;
 
     bool Isgrounded() {
         float sy = transform.localScale.y/2;
@@ -17,6 +18,7 @@ public class PlayerControl : MonoBehaviour
     }
     void Start()
     {
+        cam = Camera.main;
         rb = gameObject.GetComponent<Rigidbody>();
         jumpcool = Time.time;
     }
@@ -24,11 +26,18 @@ public class PlayerControl : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 dirVector = new Vector3(Input.GetAxis("Horizontal")*speed, 0, 0);
-        rb.MovePosition(transform.position+dirVector*Time.fixedDeltaTime);
-        if ((Input.GetKeyDown("space") || Input.GetKeyDown("w")) && Isgrounded() && Time.time-jumpcool > 0.1)
+        rb.MovePosition(transform.position + dirVector * Time.deltaTime);
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && Isgrounded() && Time.time-jumpcool > 0.1)
         {
-            rb.AddForce(transform.up * 15,ForceMode.VelocityChange);
+            rb.AddForce(transform.up*13,ForceMode.VelocityChange);
             jumpcool = Time.time;
+        }
+        if(Input.GetKey(KeyCode.LeftShift)){
+            cam.orthographicSize = Mathf.Lerp(speed,5,15*Time.deltaTime);
+            cam.orthographicSize = Mathf.Lerp(cam.orthographicSize,7,15*Time.deltaTime);
+        }else{
+            cam.orthographicSize = Mathf.Lerp(cam.orthographicSize,5,15*Time.deltaTime);
+            cam.orthographicSize = Mathf.Lerp(speed,5,15*Time.deltaTime);
         }
     }
 

@@ -10,10 +10,10 @@ public class BlockSelection : MonoBehaviour
     }
     void Update() {
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit)) {
+        if (Physics.Raycast(ray, out RaycastHit hit)  && hit.transform != transform) {
             GameObject target2 = hit.collider.gameObject;
             Ray ray2 = new Ray(transform.position+new Vector3(0,0.5f,0), target2.transform.position-transform.position);
-            if (Physics.Raycast(ray2, out RaycastHit hit2)) {
+            if (Physics.Raycast(ray2, out RaycastHit hit2) && hit.transform != transform) {
                 GameObject target = hit2.collider.gameObject;
                 if ((target.transform.position - transform.position).magnitude < 5){
                     outline.transform.position = target.transform.position;
