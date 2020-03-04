@@ -901,10 +901,10 @@ GameObject:
   - component: {fileID: 1461710972}
   - component: {fileID: 1461710971}
   - component: {fileID: 1461710970}
-  - component: {fileID: 1461710969}
   - component: {fileID: 1461710974}
   - component: {fileID: 1461710975}
   - component: {fileID: 1461710976}
+  - component: {fileID: 1461710969}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged

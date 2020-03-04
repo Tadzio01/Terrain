@@ -33,12 +33,11 @@ public class PlayerControl : MonoBehaviour
             jumpcool = Time.time;
         }
         if(Input.GetKey(KeyCode.LeftShift)){
-            cam.orthographicSize = Mathf.Lerp(speed,5,15*Time.deltaTime);
+            speed = Mathf.Lerp(speed,15,15*Time.deltaTime);
             cam.orthographicSize = Mathf.Lerp(cam.orthographicSize,7,15*Time.deltaTime);
         }else{
             cam.orthographicSize = Mathf.Lerp(cam.orthographicSize,5,15*Time.deltaTime);
-            cam.orthographicSize = Mathf.Lerp(speed,5,15*Time.deltaTime);
+            speed = Mathf.Lerp(speed,5,15*Time.deltaTime);
         }
     }
-
 }
