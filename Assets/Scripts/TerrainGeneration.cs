@@ -27,7 +27,7 @@ public class TerrainGeneration : MonoBehaviour
     // Update is called once per frame
     void Update() {
         int cpos = Mathf.FloorToInt(player.transform.position.x);
-        for (int i = cpos-15; i < cpos+15; i++)
+        for (int i = cpos-20; i < cpos+20; i++)
         {
             if (!genned.Contains(i)){
                 genned.Add(i);
