@@ -1,5 +1,5 @@
 # Terrain
-## Created by Tadzio Cancilla, 2020
+### Created by Tadzio Cancilla, 2020
 
 This is a project mainly created to test my ability to create games.
 It is my first major project created in Unity using the programming language C#.
