@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Inventory;
 public class BlockSelection : MonoBehaviour
 {
     public Camera cam;
@@ -20,6 +21,7 @@ public class BlockSelection : MonoBehaviour
                     if (Input.GetMouseButtonDown(0)) {
                         Destroy(target);
                         outline.transform.position = Vector3.down * 5000;
+                        inv.add();
                     }
                     return;
                 }

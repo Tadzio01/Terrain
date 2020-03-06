@@ -10,7 +10,7 @@ public class PlayerControl : MonoBehaviour
     private Camera cam;
 
     bool Isgrounded() {
-        float sy = transform.localScale.y/2;
+        float sy = transform.localScale.y/1.9f;
         bool r1 = Physics.Raycast(transform.position, -Vector3.up, sy);
         bool r2 = Physics.Raycast(transform.position+new Vector3(0.45f,0,0),-Vector3.up,sy);
         bool r3 = Physics.Raycast(transform.position-new Vector3(0.45f,0,0),-Vector3.up,sy);
