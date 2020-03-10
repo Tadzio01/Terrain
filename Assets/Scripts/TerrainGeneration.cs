@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using SimplexNoise;
 using UnityEditor;
+using Inventory;
 
 public class TerrainGeneration : MonoBehaviour
 {
