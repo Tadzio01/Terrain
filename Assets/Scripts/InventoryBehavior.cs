@@ -35,6 +35,19 @@ public class InventoryBehavior : MonoBehaviour
                     counter.GetComponent<Text>().text = ct.ToString();
                 }
             }
+            if (sn == inv.current){
+                slot.GetComponent<Image>().color = new Color(1,1,1);
+            }else{
+                slot.GetComponent<Image>().color = new Color(0.5f,0.5f,0.5f,0.5f);
+            }
+        }
+        if (Input.GetAxis("Mouse ScrollWheel") != 0f){
+            inv.current += (int)-(Input.GetAxis("Mouse ScrollWheel")*10);
+            if(inv.current > 10){
+                inv.current = 1;
+            }else if(inv.current < 1){
+                inv.current = 10;
+            }
         }
     }
 }

@@ -19,7 +19,7 @@ public class BlockSelection : MonoBehaviour
                 if ((target.transform.position - transform.position).magnitude < 5){
                     outline.transform.position = target.transform.position;
                     if (Input.GetMouseButtonDown(0)) {
-                        inv.add(inv.getID(target.GetComponent<Material>().color));
+                        inv.add(inv.getID(target.GetComponent<Renderer>().material.color));
                         Destroy(target);
                         outline.transform.position = Vector3.down * 5000;
                     }
